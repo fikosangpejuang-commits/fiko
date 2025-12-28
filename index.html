@@ -1,134 +1,174 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aku</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aku</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&family=Sacramento&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #e6d3b1, #ffffff);
-      font-family: 'Inter', sans-serif;
-      color: #3b2f2f;
-    }
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e6d3b1, #ffffff);
+  animation: bgShift 60s infinite alternate;
+  font-family: 'Inter', sans-serif;
+  color: #3b2f2f;
+  overflow-x: hidden;
+}
 
-    .card {
-      max-width: 760px;
-      background: rgba(255, 255, 255, 0.88);
-      padding: 48px;
-      border-radius: 22px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.08);
-      animation: fadeUp 1.4s ease;
-      position: relative;
-    }
+@keyframes bgShift {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(0.95); }
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.card {
+  max-width: 760px;
+  background: rgba(255,255,255,0.88);
+  padding: 48px;
+  border-radius: 22px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
 
-    p {
-      font-size: 16px;
-      line-height: 1.9;
-      margin-bottom: 18px;
-    }
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 32px;
+}
 
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 14px;
-      color: #7a6a58;
-    }
+p {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 1.2s ease;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
 
-    .music-btn {
-      position: absolute;
-      top: -18px;
-      right: 24px;
-      background: #6b4f3f;
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      cursor: pointer;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
+p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .music-btn:hover {
-      opacity: 0.9;
-    }
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #7a6a58;
+}
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.signature {
+  margin-top: 12px;
+  font-family: 'Sacramento', cursive;
+  font-size: 22px;
+}
 
-    @media (max-width: 600px) {
-      .card {
-        padding: 32px 24px;
-      }
-      h1 {
-        font-size: 30px;
-      }
-    }
-  </style>
+.mode-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6b4f3f;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30px;
+  color: #6b5a48;
+}
+.hidden.show {
+  opacity: 1;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <button class="music-btn" onclick="playMusic()">Mulai 🎵</button>
+<div class="card">
+  <h1>" Aku "</h1>
 
-    <h1>" Aku "</h1>
+  <p>Aku adalah rumah yang pernah roboh dalam diam. Kini pelan-pelan kubangun lagi, dengan sabar menata bata demi bata, menegakkan dinding-dinding baru dari puing-puing luka yang lama.</p>
 
-    <p>
-      Aku adalah rumah yang pernah roboh dalam diam. Kini pelan-pelan kubangun lagi,
-      dengan sabar menata bata demi bata, menegakkan dinding-dinding baru dari puing-puing luka yang lama.
-    </p>
+  <p>memang iya, tanpa sadar aku pernah jadi tokoh jahat di kisah orang lain, meski itu bukanlah niatku. tapi dalam hati aku sangat ingin berbelas maaf padanya. Jadi, jika suatu hari kau mendapati buruknya aku itu bukan karna aku berbohong bahwa "aku orang baik". itu karna aku adalah manusia yg masih belajar.</p>
 
-    <p>
-      memang iya, tanpa sadar aku pernah jadi tokoh jahat di kisah orang lain, meski itu bukanlah niatku.
-      tapi dalam hati aku sangat ingin berbelas maaf padanya. Jadi, jika suatu hari kau mendapati buruknya aku
-      itu bukan karna aku berbohong bahwa "aku orang baik". itu karna aku adalah manusia yg masih belajar.
-    </p>
+  <p>belajar menata hati, belajar menata diri dan aku percaya, di ujung proses ini, aku akan kembali berdiri, lebih indah, lebih kuat, dan siap untuk dihuni oleh hati yang memilih tinggal bersamaku nanti.</p>
 
-    <p>
-      belajar menata hati, belajar menata diri dan aku percaya, di ujung proses ini,
-      aku akan kembali berdiri, lebih indah, lebih kuat, dan siap untuk dihuni oleh hati
-      yang memilih tinggal bersamaku nanti.
-    </p>
-
-    <footer>
-      ditulis dengan jujur, tanpa tergesa
-    </footer>
+  <div class="hidden" id="hiddenText">
+    Terima kasih sudah membaca sampai sini.  
+    Tidak perlu membalas apa pun.
   </div>
 
-  <!-- AUDIO -->
-  <audio id="bgMusic" loop>
-    <source src="lagu.mp3" type="audio/mpeg">
-  </audio>
+  <footer>
+    ditulis dengan jujur, tanpa tergesa
+    <div class="signature">— me</div>
+  </footer>
+</div>
 
-  <script>
-    function playMusic() {
-      const music = document.getElementById("bgMusic");
-      music.play();
-    }
-  </script>
+<button class="mode-btn" onclick="toggleSilent()">Sunyi</button>
+
+<audio id="music" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* teks muncul bertahap */
+const paragraphs = document.querySelectorAll("p");
+paragraphs.forEach((p, i) => {
+  setTimeout(() => p.classList.add("show"), 1200 * i);
+});
+
+/* hidden message jika diam */
+setTimeout(() => {
+  document.getElementById("hiddenText").classList.add("show");
+}, 10000);
+
+/* musik fade-in */
+const music = document.getElementById("music");
+let started = false;
+
+document.body.addEventListener("click", () => {
+  if (!started) {
+    music.volume = 0;
+    music.play();
+    let vol = 0;
+    const fade = setInterval(() => {
+      if (vol < 0.4) {
+        vol += 0.01;
+        music.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 200);
+    started = true;
+  }
+});
+
+/* mode sunyi */
+function toggleSilent() {
+  if (music.muted) {
+    music.muted = false;
+    document.body.style.filter = "brightness(1)";
+  } else {
+    music.muted = true;
+    document.body.style.filter = "brightness(0.9)";
+  }
+}
+</script>
 
 </body>
 </html>
