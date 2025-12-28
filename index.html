@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aku</title>
 
-  <!-- Font klasik untuk judul -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
@@ -22,11 +22,12 @@
 
     .card {
       max-width: 760px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       padding: 48px;
       border-radius: 22px;
       box-shadow: 0 25px 50px rgba(0,0,0,0.08);
       animation: fadeUp 1.4s ease;
+      position: relative;
     }
 
     h1 {
@@ -34,7 +35,6 @@
       font-size: 36px;
       text-align: center;
       margin-bottom: 30px;
-      letter-spacing: 1px;
     }
 
     p {
@@ -48,6 +48,24 @@
       text-align: center;
       font-size: 14px;
       color: #7a6a58;
+    }
+
+    .music-btn {
+      position: absolute;
+      top: -18px;
+      right: 24px;
+      background: #6b4f3f;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .music-btn:hover {
+      opacity: 0.9;
     }
 
     @keyframes fadeUp {
@@ -74,10 +92,12 @@
 <body>
 
   <div class="card">
+    <button class="music-btn" onclick="playMusic()">Mulai 🎵</button>
+
     <h1>" Aku "</h1>
 
     <p>
-      Aku adalah rumah yang pernah roboh dalam diam. Kini pelan-pelan kubangun lagi, 
+      Aku adalah rumah yang pernah roboh dalam diam. Kini pelan-pelan kubangun lagi,
       dengan sabar menata bata demi bata, menegakkan dinding-dinding baru dari puing-puing luka yang lama.
     </p>
 
@@ -97,6 +117,18 @@
       ditulis dengan jujur, tanpa tergesa
     </footer>
   </div>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById("bgMusic");
+      music.play();
+    }
+  </script>
 
 </body>
 </html>
